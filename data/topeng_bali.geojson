@@ -1,0 +1,110 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Barong",
+        "tahun_ditemukan": 1985,
+        "lokasi": "Denpasar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.216667,
+          -8.65
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Panji",
+        "tahun_ditemukan": 1992,
+        "lokasi": "Ubud"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.2633,
+          -8.5069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Sidakarya",
+        "tahun_ditemukan": 2001,
+        "lokasi": "Gianyar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.3193,
+          -8.5192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Cekik",
+        "tahun_ditemukan": 1978,
+        "lokasi": "Tabanan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.0626,
+          -8.4548
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Tua",
+        "tahun_ditemukan": 1965,
+        "lokasi": "Singaraja"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.0919,
+          -8.111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Jero Gede",
+        "tahun_ditemukan": 2010,
+        "lokasi": "Klungkung"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.5057,
+          -8.5176
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "nama_topeng": "Topeng Karangasem",
+        "tahun_ditemukan": 1999,
+        "lokasi": "Karangasem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          115.5845,
+          -8.3908
+        ]
+      }
+    }
+  ]
+}
