@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Persebaran Topeng di Bali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position: absolute; top:0; bottom:0; right:0; left:0; }
+    .legend { background: white; padding: 6px 8px; font-size:14px; }
+  </style>
+</head>
+<body>
+<div id="map"></div>
+<script src="js/leaflet.js"></script>
+<script>
+  var map = L.map('map').setView([-8.34, 115.09], 9); // Center of Bali
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+
+  function styleFeature(feature) {
+    return {
+      radius: 7,
+      fillColor: '#d95f02',
+      color: '#000',
+      weight: 1,
+      opacity: 1,
+      fillOpacity: 0.8
+    };
+  }
+
+  fetch('data/topeng_bali.geojson').then(function(resp){ return resp.json(); }).then(function(geojson){
+    var gj = L.geoJSON(geojson, {
+      pointToLayer: function(feature, latlng) {
+        return L.circleMarker(latlng, styleFeature(feature));
+      },
+      onEachFeature: function(feature, layer) {
+        var p = feature.properties;
+        var popup = '<b>' + (p.nama_topeng || '—') + '</b><br/>' +
+                    'Lokasi: ' + (p.lokasi || '—') + '<br/>' +
+                    'Tahun ditemukan: ' + (p.tahun_ditemukan || '—');
+        layer.bindPopup(popup);
+      }
+    }).addTo(map);
+    map.fitBounds(gj.getBounds(), {padding:[20,20]});
+  }).catch(function(err){ console.error(err); alert('Gagal memuat data GeoJSON. Pastikan file ada.'); });
+
+</script>
+</body>
+</html>
